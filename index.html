@@ -41,7 +41,8 @@ img{display:block;max-width:100%}
 .fade{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
 .fade.visible{opacity:1;transform:translateY(0)}
 nav{position:fixed;top:0;width:100%;z-index:100;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,0.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--gray-line)}
-.nav-logo{font-weight:800;font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:var(--acid)}
+.nav-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:var(--acid)}
+.nav-logo img{width:28px;height:28px}
 .nav-links{display:flex;gap:28px;list-style:none}
 .nav-links a{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:color 0.2s}
 .nav-links a:hover{color:var(--acid)}
@@ -131,7 +132,7 @@ footer{padding:32px 0;text-align:center;font-family:'DM Mono',monospace;font-siz
 <body>
 
 <nav>
-  <div class="nav-logo">Neo Vibe Lab</div>
+  <div class="nav-logo"><img src="images/nvl-logo.png" alt="NVL">Neo Vibe Lab</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
@@ -165,7 +166,7 @@ footer{padding:32px 0;text-align:center;font-family:'DM Mono',monospace;font-siz
       <h2 class="section-title">Woojin Cha — Principal</h2>
     </div>
     <div class="about-layout fade">
-      <div><div class="profile-photo"></div></div>
+      <div><img src="images/woojin.jpg" alt="Woojin Cha" class="profile-photo"></div>
       <div>
         <div class="about-grid">
           <div class="about-text">
@@ -276,14 +277,14 @@ footer{padding:32px 0;text-align:center;font-family:'DM Mono',monospace;font-siz
     </div>
     <div class="nl-grid fade">
       <div class="nl-card">
-        <div class="nl-card-img"></div>
+        <div class="nl-card-img"><img src="images/enter-logo.png" alt="엔터문화연구소"></div>
         <h3>차우진의 엔터문화연구소</h3>
         <p class="sub">Korean · 7,000+ subscribers</p>
         <p class="kr">엔터테인먼트 산업의 구조, 팬덤, IP, 테크를 비평적 관점에서 분석하는 뉴스레터입니다.</p>
         <a href="https://maily.so/draft.briefing" target="_blank" class="btn btn-acid" style="margin-top:8px">Subscribe</a>
       </div>
       <div class="nl-card">
-        <div class="nl-card-img"></div>
+        <div class="nl-card-img"><img src="images/nvl-logo.png" alt="NVL"></div>
         <h3>Neo Vibe Lab</h3>
         <p class="sub">English · Global edition</p>
         <p>Industry analysis and critical perspectives on K-culture, fandom, and entertainment tech — for a global audience.</p>
