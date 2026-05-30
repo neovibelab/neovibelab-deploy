@@ -223,6 +223,102 @@ section{ padding:100px 0; }
   font-size:13px; color:var(--gray); line-height:1.7;
 }
 
+/* ── STORIES ── */
+.stories-note{
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:14px; color:var(--gray); line-height:1.9;
+  margin-top:-20px; margin-bottom:44px; max-width:640px;
+}
+.stories-grid{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+}
+.story-card{
+  display:flex; flex-direction:column;
+  background:var(--lime-mid);
+  border:1px solid var(--gray-line);
+  text-decoration:none;
+  transition:border-color 0.25s, transform 0.25s;
+}
+.story-card:hover{ border-color:rgba(214,255,146,0.4); transform:translateY(-4px); }
+.story-thumb{
+  aspect-ratio:1200/630; overflow:hidden; background:var(--black);
+  border-bottom:1px solid var(--gray-line);
+}
+.story-thumb img{ width:100%; height:100%; object-fit:cover; }
+.story-body{ padding:24px 24px 28px; display:flex; flex-direction:column; flex:1; }
+.story-title{
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:16px; font-weight:700; line-height:1.4;
+  color:var(--white); margin-bottom:10px;
+}
+.story-desc{
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:13px; color:var(--gray); line-height:1.7; flex:1;
+}
+.story-read{
+  margin-top:18px;
+  font-family:'Space Mono',monospace;
+  font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+  color:var(--lime);
+}
+
+/* ── SPEAKERS ── */
+.speakers-grid{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+}
+.speaker-card{
+  display:flex; flex-direction:column;
+  background:var(--lime-mid);
+  border:1px solid var(--gray-line);
+  text-decoration:none;
+  transition:border-color 0.25s, transform 0.25s;
+}
+.speaker-card.linked:hover{ border-color:rgba(214,255,146,0.4); transform:translateY(-4px); }
+.speaker-thumb{
+  aspect-ratio:16/10; overflow:hidden; background:var(--black);
+  border-bottom:1px solid var(--gray-line);
+  position:relative;
+}
+.speaker-thumb img{ width:100%; height:100%; object-fit:cover; }
+.speaker-thumb.placeholder{
+  display:flex; align-items:center; justify-content:center;
+  background:
+    repeating-conic-gradient(rgba(214,255,146,0.08) 0% 25%, transparent 0% 50%)
+    0 0 / 20px 20px;
+}
+.speaker-thumb.placeholder span{
+  font-family:'Space Mono',monospace;
+  font-size:40px; font-weight:700; color:rgba(214,255,146,0.5);
+}
+.speaker-badge{
+  position:absolute; top:12px; right:12px;
+  font-family:'Space Mono',monospace;
+  font-size:9px; letter-spacing:0.12em; text-transform:uppercase;
+  background:rgba(0,0,0,0.7); color:var(--lime);
+  padding:5px 10px; border:1px solid rgba(214,255,146,0.3);
+}
+.speaker-body{ padding:22px 24px 26px; display:flex; flex-direction:column; flex:1; }
+.speaker-name{
+  font-family:'Space Mono',monospace;
+  font-size:18px; font-weight:700; color:var(--white);
+  margin-bottom:4px;
+}
+.speaker-role{
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:12px; color:var(--lime); margin-bottom:14px;
+}
+.speaker-quote{
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:13px; color:var(--gray); line-height:1.7; flex:1;
+}
+.speaker-read{
+  margin-top:16px;
+  font-family:'Space Mono',monospace;
+  font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+  color:var(--lime);
+}
+.speaker-read.soon{ color:var(--gray); }
+
 /* ── TICKETS ── */
 .tickets-section{ background:var(--lime); color:var(--black); }
 .tickets-section .section-tag{ color:rgba(0,0,0,0.4); }
@@ -369,6 +465,8 @@ footer a:hover{ color:var(--lime); border-color:var(--lime); }
   nav{ padding:16px 24px; }
   .container{ padding:0 24px; }
   .about-body{ grid-template-columns:1fr; gap:40px; }
+  .stories-grid{ grid-template-columns:1fr; gap:20px; }
+  .speakers-grid{ grid-template-columns:1fr; gap:20px; }
   .ticket-single{ max-width:100%; padding:40px 32px; }
   .ticket-cta-wrap{ justify-content:center; }
   .org-grid{ grid-template-columns:1fr; gap:40px; }
@@ -449,6 +547,104 @@ footer a:hover{ color:var(--lime); border-color:var(--lime); }
           Neutune이 함께 만드는 현장입니다.
         </p>
       </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── STORIES ── -->
+<section id="stories">
+  <div class="container">
+    <p class="section-tag fade-in">Stories</p>
+    <h2 class="section-title fade-in">왜 이 행사를 만들었나</h2>
+    <p class="stories-note kr fade-in">
+      뉴타입 엔터 서밋이 어떤 자리인지, 무엇을 가장 중요하게 생각하는지 —
+      차우진 대표가 메일리 레터에 미리 풀어둔 이야기들입니다.
+    </p>
+    <div class="stories-grid fade-in">
+
+      <a href="https://maily.so/draft.briefing/posts/32z8dw31rn4" target="_blank" rel="noopener" class="story-card">
+        <div class="story-thumb"><img src="https://cdn.maily.so/202605/1778107402474503.png" alt="작은 컨퍼런스를 만들었습니다" loading="lazy"></div>
+        <div class="story-body">
+          <h3 class="story-title">🛋️ 작은 컨퍼런스를 만들었습니다</h3>
+          <p class="story-desc">뉴타입 엔터 서밋 2026에 초대합니다. 왜 지금, 작은 규모로 시작하는지.</p>
+          <span class="story-read">메일리에서 읽기 →</span>
+        </div>
+      </a>
+
+      <a href="https://maily.so/draft.briefing/posts/x1zg5wgkoqg" target="_blank" rel="noopener" class="story-card">
+        <div class="story-thumb"><img src="https://cdn.maily.so/202605/1778798382083723.png" alt="엔터 던전에서 만남을 추구하면 안 되는 걸까" loading="lazy"></div>
+        <div class="story-body">
+          <h3 class="story-title">🪄 엔터 던전에서 만남을<br>추구하면 안 되는 걸까?</h3>
+          <p class="story-desc">서밋에서 가장 중요하게 생각하는 것 — 연결과 만남의 자리.</p>
+          <span class="story-read">메일리에서 읽기 →</span>
+        </div>
+      </a>
+
+      <a href="https://maily.so/draft.briefing/posts/8do72pxdrgq" target="_blank" rel="noopener" class="story-card">
+        <div class="story-thumb"><img src="https://cdn.maily.so/202605/1779831345585903.png" alt="듣도 보도 못한 AI 얘기" loading="lazy"></div>
+        <div class="story-body">
+          <h3 class="story-title">🤖 듣도 보도 못한<br>AI 얘기에 관심 있으세요?</h3>
+          <p class="story-desc">서밋에서 다룰 AI 콘텐츠, 살짝 미리 보기.</p>
+          <span class="story-read">메일리에서 읽기 →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── SPEAKERS ── -->
+<section id="speakers">
+  <div class="container">
+    <p class="section-tag fade-in">Speakers</p>
+    <h2 class="section-title fade-in">출연자 인터뷰</h2>
+    <p class="stories-note kr fade-in">
+      서밋에 오르는 세 사람을 미리 만납니다. 인터뷰는 순차 공개됩니다.
+    </p>
+    <div class="speakers-grid fade-in">
+
+      <a href="https://maily.so/draft.briefing/posts/wjzdxxq0r3p" target="_blank" rel="noopener" class="speaker-card linked">
+        <div class="speaker-thumb">
+          <img src="https://cdn.maily.so/du/draft.briefing/202605/1779409870256394.jpg" alt="뉴튠 이종필 대표 인터뷰" loading="lazy">
+        </div>
+        <div class="speaker-body">
+          <h3 class="speaker-name kr">이종필</h3>
+          <p class="speaker-role">뉴튠(Neutune) 대표</p>
+          <p class="speaker-quote">“수노(Suno)가 안 하는 걸 우리가 하고 있어요.” AI 시대에 음악의 권리 구조를 새로 쓰는 회사, 뉴튠.</p>
+          <span class="speaker-read">인터뷰 읽기 →</span>
+        </div>
+      </a>
+
+      <div class="speaker-card">
+        <div class="speaker-thumb placeholder">
+          <span>전</span>
+          <span class="speaker-badge">Coming Soon</span>
+        </div>
+        <div class="speaker-body">
+          <h3 class="speaker-name kr">전훈표</h3>
+          <p class="speaker-role">새한벤처스 파트너</p>
+          <p class="speaker-quote">엔터테인먼트·콘텐츠 산업에 투자하는 시선으로 다음 좌표를 짚습니다.</p>
+          <span class="speaker-read soon">인터뷰 공개 예정</span>
+        </div>
+      </div>
+
+      <div class="speaker-card">
+        <div class="speaker-thumb placeholder">
+          <span>신</span>
+          <span class="speaker-badge">Coming Soon</span>
+        </div>
+        <div class="speaker-body">
+          <h3 class="speaker-name kr">신기헌</h3>
+          <p class="speaker-role">크리에이티브 디렉터</p>
+          <p class="speaker-quote">창작의 현장에서 기술과 감각이 만나는 지점을 이야기합니다.</p>
+          <span class="speaker-read soon">인터뷰 공개 예정</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
