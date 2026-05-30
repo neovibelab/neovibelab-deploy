@@ -204,8 +204,8 @@ section{ padding:100px 0; }
 }
 .program-list{ display:flex; flex-direction:column; gap:1px; }
 .program-item{
-  display:grid; grid-template-columns:120px 1fr; gap:32px; align-items:start;
-  padding:28px 0;
+  display:grid; grid-template-columns:150px 1fr; gap:32px; align-items:start;
+  padding:24px 0;
   border-bottom:1px solid var(--gray-line);
   transition:background 0.25s;
 }
@@ -298,6 +298,16 @@ section{ padding:100px 0; }
   padding:5px 10px; border:1px solid rgba(214,255,146,0.3);
 }
 .speaker-body{ padding:22px 24px 26px; display:flex; flex-direction:column; flex:1; }
+.speaker-theme{
+  font-family:'Space Mono',monospace;
+  font-size:10px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--lime); margin-bottom:12px;
+}
+.speaker-q{
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:14px; font-weight:700; color:var(--white);
+  line-height:1.5; margin-bottom:12px;
+}
 .speaker-name{
   font-family:'Space Mono',monospace;
   font-size:18px; font-weight:700; color:var(--white);
@@ -561,6 +571,8 @@ footer a:hover{ color:var(--lime); border-color:var(--lime); }
   nav{ padding:14px 20px; }
   .nav-back{ display:none; }
   section{ padding:72px 0; }
+  .program-item{ grid-template-columns:1fr; gap:6px; }
+  .program-time{ font-size:12px; }
   .hero-theme{ font-size:clamp(44px,16vw,80px); }
   .ticket-single{ padding:32px 24px; }
   .ticket-price{ font-size:36px; }
@@ -612,22 +624,22 @@ footer a:hover{ color:var(--lime); border-color:var(--lime); }
     <p class="section-tag fade-in">About</p>
     <div class="about-body fade-in">
       <div>
-        <h2 class="section-title">엔터테인먼트 산업의<br>다음 좌표를 묻는다.</h2>
+        <h2 class="section-title">AI 시대,<br>진화하는 IP 비즈니스</h2>
         <p class="about-lead">
-          AI가 제작의 문법을 바꾸고, 플랫폼이 팬덤의 구조를 바꾸는 지금.<br>
-          <strong>뉴타입 엔터 서밋</strong>은 엔터테인먼트 산업의 실무자·기획자·연구자가 모여
-          변화의 신호를 함께 읽는 자리입니다.
+          생성형 AI는 우리가 알던 상식을 바꾸고 있습니다.<br>
+          그 과정에서 우리가 알고 있던 <strong>IP의 개념</strong>도 달라집니다.
+          AI 시대의 IP 비즈니스는 과연 어떤 모습일까요?
         </p>
       </div>
       <div class="about-detail">
         <p>
-          2026년 서밋의 키워드는 <strong style="color:var(--lime)">"OK, Computer"</strong>.
-          컴퓨터에 일을 맡기기로 결정한 산업이, 그 다음에 어떤 질문을 해야 하는지 —
-          기술과 창작의 교차점에서 새로운 업의 정의를 모색합니다.
+          생성형 인공지능의 무한한 잠재성이 위협이자 기회가 되는 이 시대에,
+          <strong style="color:var(--lime)">뉴타입 엔터 서밋</strong>은 IP의 진화와 미래를
+          더 깊이 이야기해봅니다.
         </p>
         <p>
-          강연·패널·밍글링으로 이어지는 하루, 엔터문화연구소(Neo Vibe Lab)와
-          Neutune이 함께 만드는 현장입니다.
+          기술(Tech)·자본(Capital)·통찰(Insight) 세 개의 대담으로 이어지는 하루,
+          엔터문화연구소(Neo Vibe Lab)와 Neutune이 함께 만드는 현장입니다.
         </p>
       </div>
     </div>
@@ -684,9 +696,9 @@ footer a:hover{ color:var(--lime); border-color:var(--lime); }
 <section id="speakers">
   <div class="container">
     <p class="section-tag fade-in">Speakers</p>
-    <h2 class="section-title fade-in">출연자 인터뷰</h2>
+    <h2 class="section-title fade-in">세 개의 대담, 세 사람</h2>
     <p class="stories-note kr fade-in">
-      서밋에 오르는 세 사람을 미리 만납니다. 인터뷰는 순차 공개됩니다.
+      기술·자본·통찰. 세 개의 축으로 AI 시대의 IP를 묻습니다. 인터뷰는 순차 공개됩니다.
     </p>
     <div class="speakers-grid fade-in">
 
@@ -695,9 +707,11 @@ footer a:hover{ color:var(--lime); border-color:var(--lime); }
           <img src="https://cdn.maily.so/du/draft.briefing/202605/1779409870256394.jpg" alt="뉴튠 이종필 대표 인터뷰" loading="lazy">
         </div>
         <div class="speaker-body">
-          <h3 class="speaker-name kr">이종필</h3>
+          <p class="speaker-theme">Session ① · 기술 Tech</p>
+          <p class="speaker-q kr">“AI는 음악 IP의 적일까?”</p>
+          <h3 class="speaker-name kr">이종필 <span style="font-size:12px;color:var(--gray);font-weight:400">Jongpil Lee</span></h3>
           <p class="speaker-role">뉴튠(Neutune) 대표</p>
-          <p class="speaker-quote">“수노(Suno)가 안 하는 걸 우리가 하고 있어요.” AI 시대에 음악의 권리 구조를 새로 쓰는 회사, 뉴튠.</p>
+          <p class="speaker-quote">“수노(Suno)가 안 하는 걸 우리가 하고 있어요.” AI 시대에 음악의 권리 구조를 새로 쓰는 회사.</p>
           <span class="speaker-read">인터뷰 읽기 →</span>
         </div>
       </a>
@@ -708,9 +722,11 @@ footer a:hover{ color:var(--lime); border-color:var(--lime); }
           <span class="speaker-badge">Coming Soon</span>
         </div>
         <div class="speaker-body">
-          <h3 class="speaker-name kr">전훈표</h3>
-          <p class="speaker-role">새한벤처스 파트너</p>
-          <p class="speaker-quote">엔터테인먼트·콘텐츠 산업에 투자하는 시선으로 다음 좌표를 짚습니다.</p>
+          <p class="speaker-theme">Session ② · 자본 Capital</p>
+          <p class="speaker-q kr">“AI 시대의 투자 기준은 무엇일까?”</p>
+          <h3 class="speaker-name kr">전훈표 <span style="font-size:12px;color:var(--gray);font-weight:400">Hoonpyo Jeon</span></h3>
+          <p class="speaker-role">새한창업투자(Saehan Ventures) 파트너</p>
+          <p class="speaker-quote">엔터테인먼트·콘텐츠 산업에 투자하는 시선으로 AI 시대의 가치 판단 기준을 짚습니다.</p>
           <span class="speaker-read soon">인터뷰 공개 예정</span>
         </div>
       </div>
@@ -721,9 +737,11 @@ footer a:hover{ color:var(--lime); border-color:var(--lime); }
           <span class="speaker-badge">Coming Soon</span>
         </div>
         <div class="speaker-body">
-          <h3 class="speaker-name kr">신기헌</h3>
-          <p class="speaker-role">크리에이티브 디렉터</p>
-          <p class="speaker-quote">창작의 현장에서 기술과 감각이 만나는 지점을 이야기합니다.</p>
+          <p class="speaker-theme">Session ③ · 통찰 Insight</p>
+          <p class="speaker-q kr">“AI의 잠재성을 어떻게 끌어낼까?”</p>
+          <h3 class="speaker-name kr">신기헌 <span style="font-size:12px;color:var(--gray);font-weight:400">Kiheon Shin</span></h3>
+          <p class="speaker-role">프리랜서 크리에이티브 디렉터</p>
+          <p class="speaker-quote">창작의 현장에서 기술과 감각이 만나는 지점, AI의 잠재성을 끌어내는 법을 이야기합니다.</p>
           <span class="speaker-read soon">인터뷰 공개 예정</span>
         </div>
       </div>
@@ -761,42 +779,65 @@ footer a:hover{ color:var(--lime); border-color:var(--lime); }
 <!-- ── PROGRAM ── -->
 <section id="program">
   <div class="container">
-    <p class="section-tag fade-in">Program</p>
-    <h2 class="section-title fade-in">당일 프로그램</h2>
-    <p class="program-note kr fade-in">세부 일정은 추후 공개됩니다. 아래는 예상 구성입니다.</p>
+    <p class="section-tag fade-in">Time Table</p>
+    <h2 class="section-title fade-in">서밋 Summit</h2>
+    <p class="program-note kr fade-in">2026.06.12 FRI · TARTINE</p>
     <div class="program-list fade-in">
       <div class="program-item">
-        <div class="program-time">13:00</div>
+        <div class="program-time">12:00–13:00</div>
         <div class="program-body">
-          <h3 class="kr">등록 & 밍글링</h3>
-          <p class="kr">참가자 입장 및 네트워킹</p>
+          <h3 class="kr">참석 등록 <span class="mono" style="color:var(--gray);font-size:13px;font-weight:400">Check-in</span></h3>
         </div>
       </div>
       <div class="program-item">
-        <div class="program-time">14:00</div>
+        <div class="program-time">13:00–13:20</div>
         <div class="program-body">
-          <h3 class="kr">키노트 — OK, Computer</h3>
-          <p class="kr">차우진 (엔터문화연구소)</p>
+          <h3 class="kr">여는 말 <span class="mono" style="color:var(--gray);font-size:13px;font-weight:400">Keynote</span></h3>
         </div>
       </div>
       <div class="program-item">
-        <div class="program-time">15:00</div>
+        <div class="program-time">13:20–13:30</div>
         <div class="program-body">
-          <h3 class="kr">세션 · 패널 디스커션</h3>
-          <p class="kr">연사 및 주제 추후 공개</p>
+          <h3 class="kr">쉬는 시간 <span class="mono" style="color:var(--gray);font-size:13px;font-weight:400">Break Time</span></h3>
         </div>
       </div>
       <div class="program-item">
-        <div class="program-time">17:00</div>
+        <div class="program-time">13:30–14:45</div>
         <div class="program-body">
-          <h3 class="kr">Mingling & 네트워킹</h3>
-          <p class="kr">Mingling PKG 참가자 포함 자유 네트워킹</p>
+          <h3 class="kr">대담 Session ① 기술 Tech</h3>
+          <p class="kr">이종필 Jongpil Lee — “AI는 음악 IP의 적일까?”</p>
         </div>
       </div>
       <div class="program-item">
-        <div class="program-time">19:00</div>
+        <div class="program-time">14:45–15:00</div>
         <div class="program-body">
-          <h3 class="kr">종료</h3>
+          <h3 class="kr">쉬는 시간 <span class="mono" style="color:var(--gray);font-size:13px;font-weight:400">Break Time</span></h3>
+        </div>
+      </div>
+      <div class="program-item">
+        <div class="program-time">15:00–16:15</div>
+        <div class="program-body">
+          <h3 class="kr">대담 Session ② 자본 Capital</h3>
+          <p class="kr">전훈표 Hoonpyo Jeon — “AI 시대의 투자 기준은 무엇일까?”</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <div class="program-time">16:15–16:30</div>
+        <div class="program-body">
+          <h3 class="kr">쉬는 시간 <span class="mono" style="color:var(--gray);font-size:13px;font-weight:400">Break Time</span></h3>
+        </div>
+      </div>
+      <div class="program-item">
+        <div class="program-time">16:30–17:45</div>
+        <div class="program-body">
+          <h3 class="kr">대담 Session ③ 통찰 Insight</h3>
+          <p class="kr">신기헌 Kiheon Shin — “AI의 잠재성을 어떻게 끌어낼까?”</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <div class="program-time">17:45–18:00</div>
+        <div class="program-body">
+          <h3 class="kr">마무리 <span class="mono" style="color:var(--gray);font-size:13px;font-weight:400">Wrap-up</span></h3>
           <p class="kr">※ 일정은 사전 공지 없이 변경될 수 있습니다.</p>
         </div>
       </div>
