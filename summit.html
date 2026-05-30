@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>뉴타입 엔터 서밋 2026 Summer — OK, Computer</title>
+<meta name="description" content="2026년 6월 12일, TARTINE. 엔터테인먼트 산업과 기술의 교차점에서 — NewType Entertainment Summit 2026 Summer.">
+<meta property="og:title" content="뉴타입 엔터 서밋 2026 Summer — OK, Computer">
+<meta property="og:description" content="2026.06.12 FRI · TARTINE · Supported by Neutune">
+<meta property="og:image" content="https://www.neovibelab.com/images/summit-og.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.neovibelab.com/summit">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --lime: #D6FF92;
+  --black: #000000;
+  --white: #F0F0EA;
+  --gray: rgba(255,255,255,0.45);
+  --gray-line: rgba(255,255,255,0.08);
+  --lime-dim: rgba(214,255,146,0.12);
+  --lime-mid: rgba(214,255,146,0.06);
+}
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  font-family:'Space Mono', 'Noto Sans KR', monospace;
+  background:var(--black);
+  color:var(--white);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{ background:var(--lime); color:var(--black); }
+img{ display:block; max-width:100%; }
+.mono{ font-family:'Space Mono', monospace; }
+.kr{ font-family:'Noto Sans KR', sans-serif; }
+
+/* ── NAV ── */
+nav{
+  position:fixed; top:0; width:100%; z-index:100;
+  padding:18px 40px;
+  display:flex; justify-content:space-between; align-items:center;
+  background:rgba(0,0,0,0.88);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--gray-line);
+}
+.nav-back{
+  font-family:'Space Mono',monospace;
+  font-size:11px; letter-spacing:0.12em; text-transform:uppercase;
+  color:var(--gray); text-decoration:none;
+  transition:color 0.2s;
+}
+.nav-back:hover{ color:var(--lime); }
+.nav-label{
+  font-family:'Space Mono',monospace;
+  font-size:11px; letter-spacing:0.12em; text-transform:uppercase;
+  color:var(--lime);
+}
+.nav-cta{
+  font-family:'Space Mono',monospace;
+  font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+  color:var(--black); background:var(--lime);
+  text-decoration:none; padding:10px 20px;
+  transition:background 0.2s, color 0.2s;
+}
+.nav-cta:hover{ background:var(--white); }
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  padding-top:64px;
+  position:relative;
+  overflow:hidden;
+  display:flex; flex-direction:column;
+}
+/* 체커보드 KV 배경 */
+.hero-bg{
+  position:absolute; inset:0;
+  background-image:
+    repeating-conic-gradient(var(--lime) 0% 25%, var(--black) 0% 50%)
+    0 0 / 28px 28px;
+  opacity:0.85;
+}
+/* 상단 그라디언트 마스크 — 중앙 제목 부분 읽기 쉽게 */
+.hero-bg::after{
+  content:'';
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 55%, rgba(0,0,0,0.82) 0%, transparent 100%);
+}
+.hero-content{
+  position:relative; z-index:2;
+  flex:1;
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  text-align:center;
+  padding:80px 40px 60px;
+}
+.hero-sup{
+  font-family:'Space Mono',monospace;
+  font-size:clamp(10px,1.4vw,13px);
+  letter-spacing:0.18em; text-transform:uppercase;
+  color:var(--lime);
+  margin-bottom:32px;
+  opacity:0; animation:fadeUp 0.8s 0.2s forwards;
+}
+.hero-theme{
+  font-family:'Space Mono',monospace;
+  font-size:clamp(52px,11vw,140px);
+  font-weight:700;
+  line-height:0.95;
+  letter-spacing:-0.03em;
+  color:var(--lime);
+  text-shadow:
+    2px 2px 0 var(--black),
+    -2px -2px 0 var(--black),
+    4px 4px 0 rgba(0,0,0,0.5);
+  margin-bottom:48px;
+  opacity:0; animation:fadeUp 0.8s 0.35s forwards;
+}
+.hero-meta{
+  display:flex; gap:0; flex-wrap:wrap; justify-content:center;
+  border:1px solid rgba(214,255,146,0.3);
+  opacity:0; animation:fadeUp 0.8s 0.5s forwards;
+}
+.hero-meta-item{
+  padding:14px 32px;
+  border-right:1px solid rgba(214,255,146,0.3);
+  font-family:'Space Mono',monospace;
+  font-size:clamp(11px,1.5vw,14px);
+  letter-spacing:0.1em; text-transform:uppercase;
+}
+.hero-meta-item:last-child{ border-right:none; }
+.hero-meta-item .val{ color:var(--lime); font-weight:700; }
+.hero-meta-item .key{
+  font-size:9px; letter-spacing:0.15em;
+  color:var(--gray); display:block; margin-bottom:4px;
+}
+.hero-scroll{
+  position:relative; z-index:2;
+  text-align:center; padding:32px;
+  font-family:'Space Mono',monospace;
+  font-size:10px; letter-spacing:0.15em; text-transform:uppercase;
+  color:var(--gray);
+  animation:pulse 2s infinite;
+}
+
+/* ── SUPPORTED ── */
+.supported{
+  border-top:1px solid var(--gray-line);
+  border-bottom:1px solid var(--gray-line);
+  padding:20px 40px;
+  display:flex; justify-content:center; align-items:center; gap:12px;
+}
+.supported-label{
+  font-family:'Space Mono',monospace;
+  font-size:10px; letter-spacing:0.15em; text-transform:uppercase;
+  color:var(--gray);
+}
+.supported-name{
+  font-family:'Space Mono',monospace;
+  font-size:13px; letter-spacing:0.08em; text-transform:uppercase;
+  color:var(--lime); font-weight:700;
+}
+
+/* ── SECTION BASE ── */
+section{ padding:100px 0; }
+.container{ max-width:1100px; margin:0 auto; padding:0 40px; }
+.section-tag{
+  font-family:'Space Mono',monospace;
+  font-size:10px; letter-spacing:0.2em; text-transform:uppercase;
+  color:var(--lime); margin-bottom:20px;
+}
+.section-title{
+  font-family:'Space Mono',monospace;
+  font-size:clamp(24px,3.5vw,40px); font-weight:700;
+  letter-spacing:-0.02em; line-height:1.2;
+  margin-bottom:40px;
+}
+.divider{ height:1px; background:var(--gray-line); }
+
+/* ── ABOUT ── */
+.about-body{
+  display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;
+}
+.about-lead{
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:clamp(15px,2vw,18px); font-weight:400;
+  line-height:2; color:var(--white);
+}
+.about-lead strong{ color:var(--lime); font-weight:700; }
+.about-detail{
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:14px; color:var(--gray); line-height:1.9;
+}
+.about-detail p+p{ margin-top:16px; }
+
+/* ── PROGRAM ── */
+.program-note{
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:13px; color:var(--gray); line-height:1.9;
+  margin-top:-20px; margin-bottom:40px;
+}
+.program-list{ display:flex; flex-direction:column; gap:1px; }
+.program-item{
+  display:grid; grid-template-columns:120px 1fr; gap:32px; align-items:start;
+  padding:28px 0;
+  border-bottom:1px solid var(--gray-line);
+  transition:background 0.25s;
+}
+.program-item:first-child{ border-top:1px solid var(--gray-line); }
+.program-time{
+  font-family:'Space Mono',monospace;
+  font-size:13px; color:var(--lime); font-weight:700;
+}
+.program-body h3{
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:16px; font-weight:700; margin-bottom:4px;
+}
+.program-body p{
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:13px; color:var(--gray); line-height:1.7;
+}
+
+/* ── TICKETS ── */
+.tickets-section{ background:var(--lime); color:var(--black); }
+.tickets-section .section-tag{ color:rgba(0,0,0,0.4); }
+.tickets-section .section-title{ color:var(--black); }
+.ticket-single{
+  max-width:560px;
+  background:rgba(0,0,0,0.07);
+  padding:52px 56px;
+}
+.ticket-tier{
+  font-family:'Space Mono',monospace;
+  font-size:10px; letter-spacing:0.2em; text-transform:uppercase;
+  color:rgba(0,0,0,0.5); margin-bottom:10px;
+}
+.ticket-type{
+  font-family:'Space Mono',monospace;
+  font-size:28px; font-weight:700;
+  color:var(--black); margin-bottom:24px;
+  line-height:1.1;
+}
+.ticket-price{
+  font-family:'Space Mono',monospace;
+  font-size:48px; font-weight:700;
+  color:var(--black); margin-bottom:24px;
+  letter-spacing:-0.03em;
+}
+.ticket-price .unit{
+  font-size:16px; font-weight:400;
+  letter-spacing:0; margin-left:4px;
+}
+.ticket-includes{
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:13px; color:rgba(0,0,0,0.55);
+  line-height:1.9; margin-bottom:36px;
+}
+.ticket-includes li{ list-style:none; padding-left:0; }
+.ticket-includes li::before{ content:"— "; }
+.ticket-cta-wrap{
+  margin-top:48px;
+  display:flex; justify-content:flex-start;
+}
+.btn-reserve{
+  display:inline-block;
+  font-family:'Space Mono',monospace;
+  font-size:13px; letter-spacing:0.08em; text-transform:uppercase;
+  background:var(--black); color:var(--lime);
+  text-decoration:none; padding:18px 56px;
+  border:2px solid var(--black);
+  transition:background 0.2s, color 0.2s;
+}
+.btn-reserve:hover{ background:transparent; color:var(--black); border-color:var(--black); }
+.ticket-notice{
+  margin-top:20px;
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:12px; color:rgba(0,0,0,0.4);
+}
+
+/* ── ORGANIZER ── */
+.org-grid{
+  display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;
+}
+.org-logo-area{
+  display:flex; align-items:center; gap:20px;
+}
+.org-logo-box{
+  width:56px; height:56px;
+  border:1px solid var(--gray-line);
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+  padding:10px;
+}
+.org-logo-box img{ max-width:100%; max-height:100%; object-fit:contain; filter:brightness(0.85) }
+.org-name{
+  font-family:'Space Mono',monospace;
+  font-size:13px; font-weight:700; letter-spacing:0.05em;
+  text-transform:uppercase; color:var(--lime);
+}
+.org-sub{
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:12px; color:var(--gray); margin-top:4px;
+}
+.org-desc{
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:14px; color:var(--gray); line-height:1.9;
+}
+.org-desc a{
+  color:var(--lime); text-decoration:none; border-bottom:1px solid rgba(214,255,146,0.3);
+}
+.org-desc a:hover{ border-color:var(--lime); }
+
+/* ── CTA BAND ── */
+.cta-band{
+  padding:80px 0;
+  text-align:center;
+  border-top:1px solid var(--gray-line);
+}
+.cta-band h2{
+  font-family:'Space Mono',monospace;
+  font-size:clamp(20px,3.5vw,42px);
+  font-weight:700; letter-spacing:-0.02em;
+  color:var(--lime); margin-bottom:12px; line-height:1.2;
+}
+.cta-band p{
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:14px; color:var(--gray); margin-bottom:40px; line-height:1.8;
+}
+.btn-cta-main{
+  display:inline-block;
+  font-family:'Space Mono',monospace;
+  font-size:14px; letter-spacing:0.1em; text-transform:uppercase;
+  background:var(--lime); color:var(--black);
+  text-decoration:none; padding:20px 64px;
+  transition:background 0.2s;
+}
+.btn-cta-main:hover{ background:var(--white); }
+
+/* ── FOOTER ── */
+footer{
+  padding:32px 0;
+  border-top:1px solid var(--gray-line);
+  font-family:'Space Mono',monospace;
+  font-size:10px; letter-spacing:0.08em;
+  color:rgba(255,255,255,0.2);
+  text-align:center;
+}
+footer a{
+  color:inherit; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.1);
+}
+footer a:hover{ color:var(--lime); border-color:var(--lime); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{
+  from{ opacity:0; transform:translateY(20px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+@keyframes pulse{
+  0%,100%{ opacity:0.4; } 50%{ opacity:1; }
+}
+.fade-in{ opacity:0; transform:translateY(24px); transition:opacity 0.65s ease,transform 0.65s ease; }
+.fade-in.visible{ opacity:1; transform:translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media(max-width:860px){
+  nav{ padding:16px 24px; }
+  .container{ padding:0 24px; }
+  .about-body{ grid-template-columns:1fr; gap:40px; }
+  .ticket-single{ max-width:100%; padding:40px 32px; }
+  .ticket-cta-wrap{ justify-content:center; }
+  .org-grid{ grid-template-columns:1fr; gap:40px; }
+  .hero-meta{ flex-direction:column; gap:0; }
+  .hero-meta-item{ border-right:none; border-bottom:1px solid rgba(214,255,146,0.2); }
+  .hero-meta-item:last-child{ border-bottom:none; }
+}
+@media(max-width:540px){
+  nav{ padding:14px 20px; }
+  .nav-back{ display:none; }
+  section{ padding:72px 0; }
+  .hero-theme{ font-size:clamp(44px,16vw,80px); }
+  .ticket-single{ padding:32px 24px; }
+  .ticket-price{ font-size:36px; }
+  .btn-reserve{ width:100%; text-align:center; padding:18px 32px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="/" class="nav-back">← neovibelab.com</a>
+  <span class="nav-label">Summit 2026</span>
+  <a href="#tickets" class="nav-cta">예매하기</a>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-sup">NewType Entertainment Summit 2026 Summer</p>
+    <h1 class="hero-theme">OK,<br>Computer</h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="key">Date</span>
+        <span class="val">2026.06.12 FRI</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="key">Venue</span>
+        <span class="val">TARTINE</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="key">Supported by</span>
+        <span class="val">Neutune</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll ↓</div>
+</section>
+
+<div class="supported">
+  <span class="supported-label">Supported by</span>
+  <span class="supported-name">Neutune</span>
+</div>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="container">
+    <p class="section-tag fade-in">About</p>
+    <div class="about-body fade-in">
+      <div>
+        <h2 class="section-title">엔터테인먼트 산업의<br>다음 좌표를 묻는다.</h2>
+        <p class="about-lead">
+          AI가 제작의 문법을 바꾸고, 플랫폼이 팬덤의 구조를 바꾸는 지금.<br>
+          <strong>뉴타입 엔터 서밋</strong>은 엔터테인먼트 산업의 실무자·기획자·연구자가 모여
+          변화의 신호를 함께 읽는 자리입니다.
+        </p>
+      </div>
+      <div class="about-detail">
+        <p>
+          2026년 서밋의 키워드는 <strong style="color:var(--lime)">"OK, Computer"</strong>.
+          컴퓨터에 일을 맡기기로 결정한 산업이, 그 다음에 어떤 질문을 해야 하는지 —
+          기술과 창작의 교차점에서 새로운 업의 정의를 모색합니다.
+        </p>
+        <p>
+          강연·패널·밍글링으로 이어지는 하루, 엔터문화연구소(Neo Vibe Lab)와
+          Neutune이 함께 만드는 현장입니다.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── PROGRAM ── -->
+<section id="program">
+  <div class="container">
+    <p class="section-tag fade-in">Program</p>
+    <h2 class="section-title fade-in">당일 프로그램</h2>
+    <p class="program-note kr fade-in">세부 일정은 추후 공개됩니다. 아래는 예상 구성입니다.</p>
+    <div class="program-list fade-in">
+      <div class="program-item">
+        <div class="program-time">13:00</div>
+        <div class="program-body">
+          <h3 class="kr">등록 & 밍글링</h3>
+          <p class="kr">참가자 입장 및 네트워킹</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <div class="program-time">14:00</div>
+        <div class="program-body">
+          <h3 class="kr">키노트 — OK, Computer</h3>
+          <p class="kr">차우진 (엔터문화연구소)</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <div class="program-time">15:00</div>
+        <div class="program-body">
+          <h3 class="kr">세션 · 패널 디스커션</h3>
+          <p class="kr">연사 및 주제 추후 공개</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <div class="program-time">17:00</div>
+        <div class="program-body">
+          <h3 class="kr">Mingling & 네트워킹</h3>
+          <p class="kr">Mingling PKG 참가자 포함 자유 네트워킹</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <div class="program-time">19:00</div>
+        <div class="program-body">
+          <h3 class="kr">종료</h3>
+          <p class="kr">※ 일정은 사전 공지 없이 변경될 수 있습니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── TICKETS ── -->
+<section id="tickets" class="tickets-section">
+  <div class="container">
+    <p class="section-tag fade-in">Tickets</p>
+    <h2 class="section-title fade-in">예매 안내</h2>
+    <div class="ticket-single fade-in">
+      <p class="ticket-tier">Summit ONLY</p>
+      <h3 class="ticket-type">뉴타입 엔터 서밋<br>2026 Summer</h3>
+      <p class="ticket-price">₩88,000<span class="unit">원</span></p>
+      <ul class="ticket-includes kr">
+        <li>서밋 전 세션 참관</li>
+        <li>키노트 — OK, Computer</li>
+        <li>패널 디스커션</li>
+        <li>밍글링 네트워킹</li>
+      </ul>
+      <div class="ticket-cta-wrap">
+        <a href="https://booking.naver.com/booking/5/bizes/666684/items/7673120" target="_blank" rel="noopener" class="btn-reserve">
+          네이버 예약으로 이동하기 →
+        </a>
+      </div>
+      <p class="ticket-notice kr">결제는 네이버 예약 플랫폼에서 진행됩니다. 취소·환불 정책은 예매 페이지에서 확인하세요.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── ORGANIZER ── -->
+<section id="organizer">
+  <div class="container">
+    <p class="section-tag fade-in">Organizer</p>
+    <h2 class="section-title fade-in">주최·후원</h2>
+    <div class="org-grid fade-in">
+      <div>
+        <div class="org-logo-area" style="margin-bottom:32px">
+          <div class="org-logo-box">
+            <img src="images/enter-logo.png" alt="엔터문화연구소">
+          </div>
+          <div>
+            <p class="org-name">엔터문화연구소</p>
+            <p class="org-sub">Neo Vibe Lab, Seoul</p>
+          </div>
+        </div>
+        <div class="org-logo-area">
+          <div class="org-logo-box" style="background:rgba(214,255,146,0.07)">
+            <span class="org-name" style="font-size:11px;letter-spacing:0.1em">Neutune</span>
+          </div>
+          <div>
+            <p class="org-name" style="font-size:12px">Neutune</p>
+            <p class="org-sub">서밋 공식 후원</p>
+          </div>
+        </div>
+      </div>
+      <div class="org-desc kr">
+        <p>
+          <strong style="color:var(--white)">엔터문화연구소(Neo Vibe Lab)</strong>는
+          엔터테인먼트와 기술·금융·문화·소비 산업을 연결하는 부티크 연구소입니다.
+          뉴타입 엔터 서밋은 연구소의 연간 지식 공유 행사로,
+          산업의 실무자·연구자·기획자가 한자리에서 업의 좌표를 점검하는 자리입니다.
+        </p>
+        <p style="margin-top:16px">
+          문의: <a href="mailto:woojin@neovibelab.com">woojin@neovibelab.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── CTA BAND ── -->
+<section class="cta-band">
+  <div class="container">
+    <h2 class="fade-in">2026.06.12 FRI<br>TARTINE</h2>
+    <p class="kr fade-in">자리가 한정되어 있습니다. 지금 바로 예매하세요.</p>
+    <a href="https://booking.naver.com/booking/5/bizes/666684/items/7673120" target="_blank" rel="noopener" class="btn-cta-main fade-in">
+      지금 예매하기
+    </a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <p>
+      © 2026 Neo Vibe Lab, Seoul · 엔터문화연구소 ·
+      <a href="/">neovibelab.com</a> ·
+      <a href="mailto:woojin@neovibelab.com">woojin@neovibelab.com</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
