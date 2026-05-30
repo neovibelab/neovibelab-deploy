@@ -46,6 +46,8 @@ nav{position:fixed;top:0;width:100%;z-index:100;padding:20px 40px;display:flex;j
 .nav-links{display:flex;gap:28px;list-style:none}
 .nav-links a{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:color 0.2s}
 .nav-links a:hover{color:var(--acid)}
+.nav-links a.nav-summit{color:var(--acid);font-weight:500}
+.nav-links a.nav-summit::before{content:"● ";font-size:8px;vertical-align:middle}
 .hero{padding-top:80px;display:flex;flex-direction:column}
 .hero-banner{width:100%;aspect-ratio:16/9;max-height:520px;overflow:hidden;background:var(--dark)}
 .hero-banner img{width:100%;height:100%;object-fit:cover}
@@ -138,6 +140,7 @@ footer{padding:32px 0;text-align:center;font-family:'DM Mono',monospace;font-siz
     <li><a href="#services">Services</a></li>
     <li><a href="#newsletter">Newsletter</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="/summit" class="nav-summit">Summit 2026</a></li>
   </ul>
 </nav>
 
