@@ -127,7 +127,8 @@ footer{padding:32px 0;text-align:center;font-family:'DM Mono',monospace;font-siz
 }
 @media(max-width:540px){
   .domains-grid{grid-template-columns:1fr}
-  .nav-links{display:none}
+  .nav-links li:not(.nav-summit-li){display:none}
+  .nav-summit-li a.nav-summit{padding:8px 14px;border:1px solid var(--acid);border-radius:2px}
 }
 </style>
 </head>
@@ -140,7 +141,7 @@ footer{padding:32px 0;text-align:center;font-family:'DM Mono',monospace;font-siz
     <li><a href="#services">Services</a></li>
     <li><a href="#newsletter">Newsletter</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="/summit" class="nav-summit">Summit 2026</a></li>
+    <li class="nav-summit-li"><a href="/summit" class="nav-summit">Summit 2026</a></li>
   </ul>
 </nav>
 
